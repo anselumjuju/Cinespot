@@ -1,0 +1,39 @@
+.movieCard {
+    width: 200px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    background: #252525;
+    border-radius: var(--border-radius-4);
+}
+
+.movieCard>img {
+    width: 100%;
+    border-radius: var(--border-radius-4);
+}
+
+.movieCard-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.movieCard-details-name {
+    font-size: var(--font--1);
+}
+
+.movieCard-details-fav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movieCard-details-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--font--2);
+}

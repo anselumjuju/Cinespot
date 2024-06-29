@@ -1,0 +1,92 @@
+button {
+    color: var(--black-500);
+    font-size: var(--font--1);
+    font-weight: 500;
+    border-radius: var(--border-radius-4);
+    cursor: pointer;
+}
+
+/* PrimaryButton */
+.primaryButton {
+    width: max-content;
+    padding: 8px 16px;
+    background: var(--primary-red);
+    color: var(--white);
+}
+
+/* SecondaryButton */
+.secondaryButton {
+    width: max-content;
+    padding: 8px 16px;
+    background: var(--white-200);
+}
+
+/* ExploreButton */
+.exploreButton {
+    width: 100%;
+    padding: 8px 16px;
+    background: rgba(165, 165, 165, 0.16);
+    backdrop-filter: blur(5px);
+    border-radius: var(--border-radius-4);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+}
+
+.exploreButton img {
+    width: 14px;
+}
+
+.exploreButton button {
+    color: var(--white);
+}
+
+/* PlayButton */
+.playButton {
+    /* width: 100%; */
+    aspect-ratio: 1;
+    background: rgba(165, 165, 165, 0.16);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.playButton img {
+    width: 30%;
+}
+
+/* Navigating Buttons */
+.navigatingButtons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.navigatingButton {
+    width: 35px;
+    aspect-ratio: 1;
+    background: rgba(165, 165, 165, 0.16);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navigatingButton:hover,
+.navigatingButton:active {
+    scale: 1.05;
+    background: rgba(165, 165, 165, 0.32);
+}
+
+.navigatingButton img {
+    width: 25%;
+}

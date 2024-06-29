@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --primary-red: #C1121F;
+    --primary-blue: #669BBC;
+
+    --black: #000000;
+    --white: #ffffff;
+    --black-700: #0E0E0E;
+    --black-500: #252525;
+    --black-300: #595959;
+    --black-100: #A5A5A5;
+    --white-200: #CCC;
+    --white-100: #F2F2F2;
+
+    --border-radius-4: 4px;
+    --border-radius-8: 8px;
+    --border-radius-16: 16px;
+
+    --font--3: clamp(0.48rem, 0.5065rem + 0.2174vi, 0.5313rem);
+    --font--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
+    --font--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
+    --font-0: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+    --font-1: clamp(1.125rem, 1.0272rem + 0.4891vi, 1.4063rem);
+    --font-2: clamp(1.2656rem, 1.0944rem + 0.856vi, 1.7578rem);
+    --font-3: clamp(1.4238rem, 1.1548rem + 1.3451vi, 2.1973rem);
+    --font-4: clamp(1.6018rem, 1.2036rem + 1.9909vi, 2.7466rem);
+    --font-5: clamp(1.802rem, 1.2347rem + 2.8369vi, 3.4332rem);
+    --font-6: clamp(2.0273rem, 1.2825rem + 3.7944vi, 4.2505rem);
 }
