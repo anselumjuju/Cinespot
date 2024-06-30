@@ -1,7 +1,7 @@
 import React from 'react'
 import './footer.css'
 
-import { PrimaryButton, FooterLink } from '../components'
+import { PrimaryButton, FooterLink } from '../../components'
 
 const Footer = () => {
   return (
@@ -12,16 +12,16 @@ const Footer = () => {
           <div className="link1">
             {
               ['Home', 'Explore', 'Latest', 'Movies', 'TV Shows'].map(
-                (link) => {
-                  return <FooterLink text={link} />
+                (index,link) => {
+                  return <FooterLink key={index} text={link} />
                 }
               )}
           </div>
           <div className="link2">
             {
               ['Profile', 'Watchlist', 'Watched'].map(
-                (link) => {
-                  return <FooterLink text={link} />
+                (index,link) => {
+                  return <FooterLink key={index} text={link} />
                 }
               )}
           </div>

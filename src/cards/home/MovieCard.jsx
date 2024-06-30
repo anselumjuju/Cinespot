@@ -1,7 +1,7 @@
 import React from 'react'
 import './movieCard.css'
 
-import { ExploreButton } from '../components'
+import { ExploreButton } from '../../components'
 
 const MovieCard = ({image = 'https://via.placeholder.com/174x225',name = 'Unknown Movie',rating = 'N/A' }) => {
     return (

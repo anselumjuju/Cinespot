@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './header.css'
 
-import { PrimaryButton } from '../components'
+import { PrimaryButton } from '../../components';
 import { RxHamburgerMenu, RxCross2, RxMagnifyingGlass } from "react-icons/rx";
 
 

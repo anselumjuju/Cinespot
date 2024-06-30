@@ -1,12 +1,13 @@
 body {
     width: 100%;
-    overflow-x: hidden;
     background-color: var(--black-700);
     color: var(--white-200);
 }
 
 #root {
     width: 100%;
+    max-width: 99.9vw;
+    overflow-x: hidden;
     min-height: 100vh;
     padding: 16px;
 }

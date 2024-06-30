@@ -1,14 +1,14 @@
 import React from 'react'
-import './heroCard.css'
+import './movieCard2.css'
 
 import { PlayButton } from '../../components'
 
-const HeroCard = ({ bgImage = 'https://via.placeholder.com/174x225', poster = 'https://via.placeholder.com/174x225', title = 'Unknown' }) => {
+const HeroCard = ({ thumbnail = 'https://via.placeholder.com/174x225', poster = 'https://via.placeholder.com/174x225', title = 'Unknown' }) => {
     return (
         <div className='heroCard'>
             <div className="heroCard-img">
                 <div className="overlay"></div>
-                <img src={bgImage} alt="movieImage" />
+                <img src={thumbnail} alt="movieImage" />
             </div>
             <div className="heroCard-content">
                 <img src={poster} alt='movieImage' className="heroCard-content-img" />

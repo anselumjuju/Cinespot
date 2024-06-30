@@ -1,18 +1,5 @@
-import { PrimaryButton, SecondaryButton, ExploreButton, PlayButton, NavigatingButton } from "./buttons/Button";
-import Profile from "./Profile";
-import FooterLink from "./footer/FooterLink";
-import CastImage from "./cast/CastImage";
-import CastCard from "./cast/CastCard";
-
-
-export {
-    PrimaryButton,
-    SecondaryButton,
-    ExploreButton,
-    PlayButton,
-    NavigatingButton,
-    Profile,
-    FooterLink,
-    CastImage,
-    CastCard
-}
+export { PrimaryButton, SecondaryButton, ExploreButton, PlayButton, NavigatingButton } from "./buttons/Button"
+export {default as Profile } from "./Profile"
+export {default as FooterLink } from "./footer/FooterLink"
+export {default as CastImage } from "./cast/CastImage"
+export {default as CastCard } from "./cast/CastCard"

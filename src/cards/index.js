@@ -1,12 +1,4 @@
-import MovieCard from "./MovieCard";
-import VideoPlayer from "./player/VideoPlayer";
-import HeroSlider from "./home/HeroSlider";
-import HeroCard from "./home/HeroCard";
-
-
-export {
-    MovieCard,
-    VideoPlayer,
-    HeroSlider,
-    HeroCard
-}
+export {default as Slider } from './home/Slider';
+export {default as MovieCard } from './home/MovieCard';
+export {default as MovieCard2 } from './home/MovieCard2';
+export {default as VideoPlayer } from './player/VideoPlayer';
