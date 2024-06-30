@@ -5,7 +5,7 @@ body {
     color: var(--white-200);
 }
 
-#root{
+#root {
     width: 100%;
     min-height: 100vh;
     padding: 16px;
@@ -21,6 +21,7 @@ img {
     background-size: cover;
 }
 
-button{
+button,
+input {
     background-color: transparent;
 }

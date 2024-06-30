@@ -4,6 +4,7 @@ button {
     font-weight: 500;
     border-radius: var(--border-radius-4);
     cursor: pointer;
+    white-space: nowrap;
 }
 
 /* PrimaryButton */
