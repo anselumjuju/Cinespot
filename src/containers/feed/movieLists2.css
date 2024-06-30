@@ -1,0 +1,70 @@
+.movieLists2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 32px;
+    padding: 32px 0;
+}
+
+.movieLists2-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.movieLists2-nav h1 {
+    font-size: var(--font-6);
+    font-size: 15vw;
+    color: rgb(52, 52, 52);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: -150px;
+}
+
+.movieLists2-nav h4 {
+    font-size: var(--font-2);
+    font-weight: 700;
+}
+
+.movieLists2-lists {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 32px 16px;
+    justify-items: center;
+}
+
+
+/* Media Queries */
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    .movieLists2-lists {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .movieLists2-nav h1 {
+        margin-bottom: -70px;
+    }
+
+}
+
+/* Tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .movieLists2-nav h1 {
+        margin-bottom: -70px;
+    }
+}
+
+/* Laptops */
+@media only screen and (min-width: 769px) and (max-width: 1279px) {
+    .movieLists2-nav h1 {
+        margin-bottom: -13%;
+    }
+}
+
+/* Large Desktops and Monitors */
+@media only screen and (min-width: 1280px) {}

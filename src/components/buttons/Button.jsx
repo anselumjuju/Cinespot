@@ -27,7 +27,7 @@ const ExploreButton = (props) => {
 
 const PlayButton = (props) => {
     return (
-        <div className='playButton' style={{ minWidth: `${props.size}`, height: `${props.size}` }}>
+        <div className='playButton' style={{ width: `${props.size}`, height: `${props.size}` }}>
             <img src={PlayIcon} alt='Play' />
         </div>
     )

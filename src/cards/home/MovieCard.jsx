@@ -3,12 +3,18 @@ import './movieCard.css'
 
 import { ExploreButton } from '../../components'
 
-const MovieCard = ({image = 'https://via.placeholder.com/174x225',name = 'Unknown Movie',rating = 'N/A' }) => {
+const MovieCard = ({ data }) => {
+    const {
+        image = 'https://via.placeholder.com/174x225',
+        name = 'Unknown Movie',
+        rating = 'N/A'
+    } = data
+
     return (
         <div className='movieCard'>
             <img src={image} alt="movieImage" width='174px' />
             <div className="movieCard-details">
-                <p className="movieCard-details-name">{name}</p>
+                <p className="movieCard-details-name" title={name}>{name}</p>
                 <div className="movieCard-details-fav">
                     <div className="movieCard-details-rating">
                         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">

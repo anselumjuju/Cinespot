@@ -1,0 +1,30 @@
+.movieLists1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.movieLists1-nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.movieLists1-nav h4{
+    font-size: var(--font-2);
+    font-weight: 700;
+}
+
+.movieLists1-list{
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+}

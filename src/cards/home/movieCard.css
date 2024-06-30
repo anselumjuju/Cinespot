@@ -1,16 +1,17 @@
 .movieCard {
     width: 200px;
+    height: 100%;
     padding: 8px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     background: #252525;
     border-radius: var(--border-radius-4);
 }
 
 .movieCard>img {
     width: 100%;
+    aspect-ratio: 3/4;
     border-radius: var(--border-radius-4);
 }
 
@@ -22,6 +23,12 @@
 
 .movieCard-details-name {
     font-size: var(--font--1);
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movieCard-details-fav {
@@ -36,4 +43,26 @@
     align-items: center;
     gap: 4px;
     font-size: var(--font--2);
+}
+
+
+/* Media Queries */
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    
+}
+/* Tablet */
+@media only screen and (max-width: 768px) {
+    .movieCard{
+        width: 180px;
+    }
+}
+/* Laptops */
+@media only screen and (max-width: 1279px) {
+    
+}
+/* Large Desktops and Monitors */
+@media only screen and (min-width: 1280px) {
+    
 }

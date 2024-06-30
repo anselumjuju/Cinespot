@@ -62,7 +62,7 @@ button {
 
 /* Navigating Buttons */
 .navigatingButtons {
-    width: 100%;
+    width: max-content;
     display: flex;
     align-items: center;
     justify-content: space-between;

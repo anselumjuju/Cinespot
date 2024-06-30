@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="link1">
             {
               ['Home', 'Explore', 'Latest', 'Movies', 'TV Shows'].map(
-                (index,link) => {
+                (link,index) => {
                   return <FooterLink key={index} text={link} />
                 }
               )}
@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="link2">
             {
               ['Profile', 'Watchlist', 'Watched'].map(
-                (index,link) => {
+                (link,index) => {
                   return <FooterLink key={index} text={link} />
                 }
               )}
