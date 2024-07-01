@@ -30,3 +30,7 @@ button,
 input {
     background-color: transparent;
 }
+
+.margin-tb{
+    margin: 16px 0;
+}

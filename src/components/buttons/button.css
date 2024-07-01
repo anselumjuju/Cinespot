@@ -45,7 +45,6 @@ button {
 
 /* PlayButton */
 .playButton {
-    /* width: 100%; */
     aspect-ratio: 1;
     background: rgba(165, 165, 165, 0.16);
     backdrop-filter: blur(5px);

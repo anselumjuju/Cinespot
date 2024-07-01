@@ -3,6 +3,7 @@ import './heroSlider.css'
 
 import { Slider } from '../../cards'
 import { slides } from '../../constants/constant'
+import { NavigatingButton } from '../../components'
 
 const HeroSlider = () => {
 
@@ -28,7 +29,7 @@ const HeroSlider = () => {
     const interval = setInterval(() => {
       goToNext();
       console.log('slide' + JSON.stringify(slides[currentIndex]))
-    }, 3000);
+    }, 100000);
 
     return () => {
       clearInterval(interval);
@@ -40,9 +41,7 @@ const HeroSlider = () => {
 
       <Slider data={slides[currentIndex]} />
 
-
       <div className="slider-navigation">
-        <button onClick={goToPrevious}>&#10094;</button>
         <div className="slider-indicators">
           {slides.map((slide, index) => (
             <div
@@ -52,7 +51,7 @@ const HeroSlider = () => {
             ></div>
           ))}
         </div>
-        <button onClick={goToNext}>&#10095;</button>
+        <NavigatingButton onPrevious={goToPrevious} onNext={goToNext} />
       </div>
     </div>
   )

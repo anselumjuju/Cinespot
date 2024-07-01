@@ -1,7 +1,8 @@
 import React from 'react'
 import "./App.css"
-import { Header, Footer, HeroSlider, TrendingCards, MovieLists1, MovieLists2 } from './containers'
 
+import { Header, Footer } from './containers'
+import { Home } from './pages'
 
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
     return (
         <>
             <Header />
-            <MovieLists2 title="Trending" />
+            <Home />
             <div style={{ height: "100vh" }}></div>
             <Footer />
         </>

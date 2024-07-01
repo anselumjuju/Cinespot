@@ -27,13 +27,20 @@ const ExploreButton = (props) => {
 
 const PlayButton = (props) => {
     return (
-        <div className='playButton' style={{ width: `${props.size}`, height: `${props.size}` }}>
+        <div className='playButton' style={
+            {
+                width: props.size,
+                height: props.size,
+                maxWidth: props.size,
+                maxHeight: props.size
+            }
+        }>
             <img src={PlayIcon} alt='Play' />
         </div>
     )
 }
 
-const NavigatingButton = ({onPrevious, onNext}) => {
+const NavigatingButton = ({ onPrevious, onNext }) => {
     return (
         <div className="navigatingButtons">
             <div className='navigatingButton' onClick={onPrevious}>

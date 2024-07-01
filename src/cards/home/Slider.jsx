@@ -2,7 +2,7 @@ import React from 'react'
 import './slider.css'
 import { PlayButton } from '../../components'
 
-const Slider = ({data}) => {
+const Slider = ({ data }) => {
 
     const {
         thumbnail = 'https://via.placeholder.com/174x225',
@@ -17,7 +17,9 @@ const Slider = ({data}) => {
                 <img src={thumbnail} alt="movieImage" className="slider_img-img" />
             </div>
             <div className="slider_content">
-                <img src={poster} alt="moviePoster" className="moviePoster" />
+                <div className="moviePoster">
+                    <img src={poster} alt="moviePoster" />
+                </div>
                 <div className="slider_content-details">
                     <PlayButton size={'80px'} />
                     <div className="slider_content-details-text">
