@@ -29,7 +29,7 @@ const HeroSlider = () => {
     const interval = setInterval(() => {
       goToNext();
       console.log('slide' + JSON.stringify(slides[currentIndex]))
-    }, 100000);
+    }, 2000);
 
     return () => {
       clearInterval(interval);

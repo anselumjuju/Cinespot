@@ -143,6 +143,7 @@
         bottom: 0;
         background-color: var(--black-700);
         background-color: #1a1a1a;
+        z-index: 200;
     }
 
 

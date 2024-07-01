@@ -11,7 +11,6 @@ const App = () => {
         <>
             <Header />
             <Home />
-            <div style={{ height: "100vh" }}></div>
             <Footer />
         </>
     )
