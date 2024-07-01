@@ -2,7 +2,7 @@ export const slides =
   [
     { thumbnail: 'https://hips.hearstapps.com/hmg-prod/images/gxk-660845e9a2ac5.png?crop=0.8859840232389251xw:1xh;center,top&resize=1200:*', poster: 'https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2024/03/godzilla_x_kong_the_new_empire_ver8.jpg', title: 'Godzilla X Kong, The New Empire' },
     { thumbnail: 'https://www.wired.com/wp-content/uploads/2014/10/ff_disney5_f.jpg', poster: 'https://lumiere-a.akamaihd.net/v1/images/p_bighero6_19753_20bd6206.jpeg?region=0%2C0%2C540%2C810', title: 'Big Hero 6' },
-    { thumbnail: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D824B5CBF3D23DFAC90C3F4CB88E8F0BE741E9977C8616295A7493EE4A8D67F7/scale?width=2880&aspectRatio=1.78&format=jpeg', poster: 'https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_FMjpg_UX1000_.jpg', title: 'Wall E' },
+    // { thumbnail: 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D824B5CBF3D23DFAC90C3F4CB88E8F0BE741E9977C8616295A7493EE4A8D67F7/scale?width=2880&aspectRatio=1.78&format=jpeg', poster: 'https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_FMjpg_UX1000_.jpg', title: 'Wall E' },
   ]
 
 export const movies =

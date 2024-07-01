@@ -6,6 +6,7 @@ import { MovieCard2 } from '../../cards'
 import { slides } from '../../constants/constant'
 
 const TrendingCards = () => {
+
     return (
         <div className='trendingCards'>
             <div className="trendingCards_nav">

@@ -5,36 +5,43 @@
 
 .home_section1 {
     width: 100%;
-    height: 100%;
+    height: max-content;
     display: flex;
     align-items: stretch;
     justify-content: center;
+    gap: 32px;
 }
-/* 
-.home_section1 :nth-child(1) {
+
+.home_section1-div1 {
     width: 100%;
 }
 
-.home_section1 :nth-child(2) {
+.home_section1-div2 {
     width: 40%;
-} */
+}
 
 
 /*Media Queries*/
 
 /* Laptops */
 @media screen and (max-width: 1279px) {
-    /* .home_section1 {
-        flex-direction: column;
-    }
 
-    .home_section1 :nth-child(2) {
-        width: 100%;
-    } */
+    .home_section1 {
+        gap: 16px;
+    }
 }
 
 /* Tablets */
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+
+    .home_section1 {
+        flex-direction: column;
+    }
+
+    .home_section1-div2 {
+        width: 100%;
+    }
+}
 
 /* Mobiles */
 @media screen and (max-width: 480px) {}
