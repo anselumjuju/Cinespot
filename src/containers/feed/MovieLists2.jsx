@@ -9,8 +9,12 @@ const MovieLists2 = (props) => {
     return (
         <div className="movieLists2">
             <div className="movieLists2-nav">
-                <h1>{(props.title)? props.title : ''}</h1>
-                <h4>{(props.text) ? props.text : ''}</h4>
+                {
+                    (props.title) && <h1>{props.title}</h1>
+                }
+                {
+                    (props.text) && <h4>{props.text}</h4>
+                }
             </div>
             <div className='movieLists2-lists'>
                 {movies.map((movie, index) => <MovieCard key={index} data={movie} />)}

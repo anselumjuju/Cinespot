@@ -2,7 +2,8 @@ import React from 'react'
 import './explore.css'
 
 import { categories } from '../../constants/constant'
-import { MovieLists1 } from '../../containers'
+import { SecondaryButton } from '../../components'
+import { MovieLists2 } from '../../containers'
 
 const Explore = () => {
   return (
@@ -16,15 +17,18 @@ const Explore = () => {
           })
         }
       </div>
-      {
-        categories.map((category, index) => {
-          return (
-            <div className='explore-div'>
-              <MovieLists1 key={index} data={categories} />
-            </div>
-          )
-        })
-      }
+      <div className="explore-movies">
+        {
+          categories.map((category, index) => {
+            return (
+              <div className='explore-div'>
+                <MovieLists2 key={index} text={category} />
+                <SecondaryButton text='Explore' />
+              </div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
