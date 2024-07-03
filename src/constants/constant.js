@@ -28,3 +28,6 @@ export const movies =
     { image: "https://tse3.mm.bing.net/th/id/OIP.J9b9yJvcRxnb3Df5jILAdQHaK-?rs=1&pid=ImgDetMain", name: "Tenet", rating: 8.1 },
     { image: "https://tse2.mm.bing.net/th/id/OIP.EXOGt1jqRvg6kjffLiHpmAHaKj?rs=1&pid=ImgDetMain", name: "Star Wars: The Rise of Skywalker", rating: 7.8 }
   ]
+
+
+export const categories = ['Action', 'Adventure', 'Anime', 'Comedy', 'Documentary', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Reality', 'Romance', 'Sci-Fi', 'Sports', 'Thriller', 'Western']

@@ -1,12 +1,11 @@
 import React, { useRef, useEffect } from 'react'
-import './movieLists1.css'
+import './castSlider.css'
 
-import { MovieCard } from '../../cards'
+import { CastCard } from '../../components'
 import { NavigatingButton } from '../../components'
 import { movies } from '../../constants/constant'
 
-const MovieLists1 = ({data}) => {
-    const {title = 'Popular'} = data
+const CastSlider = () => {
     const listRef = useRef(null)
 
     const handlePreviousClick = () => {
@@ -27,16 +26,16 @@ const MovieLists1 = ({data}) => {
     }
 
     return (
-        <div className='movieLists1'>
-            <div className="movieLists1-nav">
-                <h4>{title}</h4>
+        <div className='castSlider'>
+            <div className="castSlider-nav">
+                <h4>Cast</h4>
                 <NavigatingButton onPrevious={handlePreviousClick} onNext={handleNextClick} />
             </div>
-            <div className="movieLists1-list" ref={listRef}>
-                {movies.map((movie, index) => <MovieCard key={index} data={movie} />)}
+            <div className="castSlider-list" ref={listRef}>
+                {movies.map((movie, index) => <CastCard key={index} data={movie} />)}
             </div>
         </div>
     )
 }
 
-export default MovieLists1
+export default CastSlider

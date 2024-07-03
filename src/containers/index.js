@@ -4,3 +4,5 @@ export { default as HeroSlider } from "./home/HeroSlider";
 export { default as TrendingCards } from "./home/TrendingCards";
 export { default as MovieLists1 } from "./feed/MovieLists1";
 export { default as MovieLists2 } from "./feed/MovieLists2";
+export {default as CastSlider } from "./feed/CastSlider"
+export {default as PhotoSlider } from "./feed/PhotoSlider"

@@ -3,12 +3,19 @@ import './cast.css'
 
 import { CastImage } from '..'
 
-const CastCard = ({imageURL= "https://via.placeholder.com/174x225",movieName= "Movie Name",originalName= "Original Name"}) => {
+const CastCard = ({ data }) => {
+
+  const {
+    imageURL = "https://via.placeholder.com/174x225",
+    movieName = "Movie Name",
+    originalName = "Original Name"
+  } = data
+
   return (
     <div className='castCard'>
-        <CastImage imageURL={imageURL} />
-        <p className='castCard-movieName'>{movieName}</p>
-        <p className='castCard-originalName'>{originalName}</p>
+      <CastImage imageURL={imageURL} />
+      <p className='castCard-movieName'>{movieName}</p>
+      <p className='castCard-originalName'>{originalName}</p>
     </div>
   )
 }

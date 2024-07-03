@@ -5,7 +5,7 @@ import { PrimaryButton, FooterLink } from '../../components'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div className='footer margin-t'>
       <PrimaryButton text='Experience Cinespot fully - Sign Up' />
       <div className="footer_content">
         <div className="footer_content-links">

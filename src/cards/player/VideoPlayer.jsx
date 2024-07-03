@@ -10,7 +10,7 @@ const VideoPlayer = ({ image = 'https://via.placeholder.com/174x225' }) => {
             <div className="videoPlayer">
                 <img src={'https://www.techradar247.com/wp-content/uploads/2020/07/Kung-Fu.5.jpeg'} alt="" className='videoPlayer-video' />
                 <div className="videoPlayer-controls">
-                    <PlayButton size="64px" />
+                    <PlayButton size="84px" />
                 </div>
             </div>
 

@@ -34,3 +34,25 @@ input {
 .margin-tb{
     margin: 32px 0;
 }
+
+.margin-t{
+    margin-top: 32px;
+}
+
+.oneline-ellipses{
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.twoline-ellipses{
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

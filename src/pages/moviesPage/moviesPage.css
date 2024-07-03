@@ -1,0 +1,160 @@
+.moviesPage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 48px;
+}
+
+/* Title Section */
+.titleSection {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: var(--font-2);
+    font-weight: 700;
+}
+
+/* Trailer Section */
+.trailerSection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Summary Section */
+.summarySection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    gap: 16px;
+}
+
+.summary-poster {
+    width: 30%;
+}
+
+.summary-poster img {
+    width: 100%;
+    border-radius: var(--border-radius-8);
+}
+
+.summary-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 32px;
+}
+
+.summary-details .summary-header {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+
+.summary-details .summary-buttons {
+    display: flex;
+    gap: 24px;
+}
+
+.summary-details .summary-content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+}
+
+.content-title,
+.content-details {
+    width: max-content;
+    padding-right: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+/* Cast Section */
+
+.castSection {
+    width: 100%;
+    height: 100%;
+}
+
+/* Photo Section */
+
+.photoSection {
+    width: 100%;
+    height: 100%;
+}
+
+/* Details Section */
+
+.detailsSection{
+    width: 100%;
+}
+
+.detailsSection-context{
+    margin-top: 16px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 16px;
+}
+
+.detailsSection-title,
+.detailsSection-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 32px;
+}
+
+/* Similar Section */
+
+.similarSection {
+    width: 100%;
+}
+
+
+/*Media Queries*/
+
+/* Laptops */
+@media screen and (max-width: 1279px) {}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .summary-poster {
+        display: none;
+    }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {}
+
+/* 4k - Monitors */
+@media screen and (min-width: 1700px) {}

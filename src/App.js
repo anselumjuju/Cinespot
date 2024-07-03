@@ -2,15 +2,15 @@ import React from 'react'
 import "./App.css"
 
 import { Header, Footer } from './containers'
-import { Home } from './pages'
-
+import { Home, MoviesPage, Explore } from './pages'
+import { movies } from './constants/constant'
 
 const App = () => {
 
     return (
         <>
             <Header />
-            <Home />
+            <Explore />
             <Footer />
         </>
     )

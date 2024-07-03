@@ -1,4 +1,5 @@
 .movieCard {
+    min-width: 200px;
     width: 200px;
     height: 100%;
     padding: 8px;
@@ -55,7 +56,7 @@
 /* Tablet */
 @media only screen and (max-width: 768px) {
     .movieCard{
-        width: 180px;
+        min-width: 180px;
     }
 }
 /* Laptops */
