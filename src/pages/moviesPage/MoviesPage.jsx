@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './moviesPage.css'
 
 import { PrimaryButton, SecondaryButton } from '../../components';
 import { CastSlider, PhotoSlider, MovieLists1 } from '../../containers/';
 import { VideoPlayer } from '../../cards';
+import { useParams } from 'react-router-dom';
 
 const MoviesPage = ({ data }) => {
 
+  const Params = useParams();
+
   const {
-    movieName = 'Movie Name',
+    name = 'Movie Name',
     trailer = 'https://via.placeholder.com/174x225',
     image = 'https://via.placeholder.com/174x225',
     summary = 'Summary',
@@ -22,11 +25,15 @@ const MoviesPage = ({ data }) => {
     companies = 'Companies',
   } = data;
 
+  useEffect(()=>{
+    console.log(Params.id);
+  });
+
   return (
     <div className='moviesPage margin-tb'>
 
       <div className="titleSection">
-        <h3 className='twoline-ellipses'>{movieName}</h3>
+        <h3 className='twoline-ellipses'>{name}</h3>
         <SecondaryButton text='Share' />
       </div>
 
@@ -40,7 +47,7 @@ const MoviesPage = ({ data }) => {
         </div>
         <div className="summary-details">
           <div className="summary-header">
-            <h3 className='oneline-ellipses'>{movieName}</h3>
+            <h3 className='oneline-ellipses'>{name}</h3>
             <div className="summary-buttons">
               <PrimaryButton text='Watchlist' />
               <SecondaryButton text='Watched' />
