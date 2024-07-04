@@ -11,7 +11,6 @@ export const fetchMoviesByGenre = async (genreName) => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genreID}&sort_by=release_date.desc&vote_count.gte=100`;
 
     const response = await axios.get(url);
-    console.log(`${genreName} : ${genreID}`);
     return response.data.results;
 }
 
