@@ -14,6 +14,7 @@
     justify-content: space-evenly;
     gap: 16px;
     overflow: scroll;
+    text-transform: capitalize;
 }
 
 .explore-nav>p {
@@ -28,7 +29,7 @@
     border-radius: 16px;
 }
 
-.explore-movies{
+.explore-movies {
     width: 100%;
     display: flex;
     flex-direction: column;

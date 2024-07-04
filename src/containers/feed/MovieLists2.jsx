@@ -2,9 +2,10 @@ import React from 'react'
 import './movieLists2.css'
 
 import { MovieCard } from '../../cards'
-import { movies } from '../../constants/constant'
 
 const MovieLists2 = (props) => {
+
+    const movies = props.movies
 
     return (
         <div className="movieLists2">
@@ -17,7 +18,13 @@ const MovieLists2 = (props) => {
                 }
             </div>
             <div className='movieLists2-lists'>
-                {movies.map((movie, index) => <MovieCard key={index} data={movie} />)}
+                {
+                    movies ? (
+                        movies.map((movie, index) => <MovieCard key={index} data={movie} />)
+                    ) : (
+                        <p>No movies found</p>
+                    )
+                }
             </div>
         </div>
     )

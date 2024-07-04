@@ -31,3 +31,8 @@ export const movies =
 
 
 export const categories = ['Action', 'Adventure', 'Anime', 'Comedy', 'Documentary', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Reality', 'Romance', 'Sci-Fi', 'Sports', 'Thriller', 'Western']
+
+
+// export const genres = [{ id: 28, name: "Action" }, { id: 12, name: "Adventure" }, { id: 16, name: "Animation" }, { id: 35, name: "Comedy" }, { id: 80, name: "Crime" }, { id: 99, name: "Documentary" }, { id: 18, name: "Drama" }, { id: 10751, name: "Family" }, { id: 14, name: "Fantasy" }, { id: 36, name: "History" }, { id: 27, name: "Horror" }, { id: 10402, name: "Music" }, { id: 9648, name: "Mystery" }, { id: 10749, name: "Romance" }, { id: 878, name: "Science Fiction" }, { id: 10770, name: "TV Movie" }, { id: 53, name: "Thriller" }, { id: 10752, name: "War" }, { id: 37, name: "Western" }];
+
+export const genres = [{ id: 28, name: "action" }, { id: 12, name: "adventure" }, { id: 16, name: "animation" }, { id: 35, name: "comedy" }, { id: 80, name: "crime" }, { id: 99, name: "documentary" }, { id: 18, name: "drama" }, { id: 10751, name: "family" }, { id: 14, name: "fantasy" }, { id: 36, name: "history" }, { id: 27, name: "horror" }, { id: 10402, name: "music" }, { id: 9648, name: "mystery" }, { id: 10749, name: "romance" }, { id: 878, name: "science fiction" }, { id: 10770, name: "tv movie" }, { id: 53, name: "thriller" }, { id: 10752, name: "war" }, { id: 37, name: "western" }];

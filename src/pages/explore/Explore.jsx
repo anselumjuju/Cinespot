@@ -1,28 +1,36 @@
 import React from 'react'
 import './explore.css'
 
-import { categories } from '../../constants/constant'
+import { useNavigate } from 'react-router-dom'
+
+import { genres } from '../../constants/constant'
 import { SecondaryButton } from '../../components'
 import { MovieLists2 } from '../../containers'
 
 const Explore = () => {
+  const navigate = useNavigate()
   return (
     <div className='explore margin-tb'>
       <div className="explore-nav">
         {
-          categories.map((category, index) => {
+          genres.map((genre, index) => {
             return (
-              <p key={index}>{category}</p>
+              <p
+                key={index}
+                onClick={()=>{
+                  navigate(`/search?genre=${(genre.name).toLowerCase()}`)
+                }}
+              >{genre.name}</p>
             )
           })
         }
       </div>
       <div className="explore-movies">
         {
-          categories.map((category, index) => {
+          genres.map((genre, index) => {
             return (
-              <div className='explore-div'>
-                <MovieLists2 key={index} text={category} />
+              <div className='explore-div' key={index}>
+                <MovieLists2 text={genre.name} />
                 <SecondaryButton text='Explore' />
               </div>
             )
