@@ -2,21 +2,21 @@ import React, { useState, useEffect } from 'react'
 import './heroSlider.css'
 
 import { Slider } from '../../cards'
-import { slides } from '../../constants/constant'
 import { NavigatingButton } from '../../components'
+import { fetchTopMovies } from '../../api/fetchData'
 
 const HeroSlider = () => {
-
+  const [fetchedMovies, setFetchedMovies] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide ? fetchedMovies.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
+    const isLastSlide = currentIndex === fetchedMovies.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -28,22 +28,29 @@ const HeroSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
-      console.log('slide' + JSON.stringify(slides[currentIndex]))
-    }, 2000);
+    }, 5000);
+
 
     return () => {
       clearInterval(interval);
     };
   }, [currentIndex]);
+  useEffect(() => {
+    async function fetchData() {
+      let fetchedMovies = await fetchTopMovies(4);
+      setFetchedMovies(fetchedMovies);
+    }
+    fetchData()
+  }, []);
 
   return (
     <div className="heroSlider">
 
-      <Slider data={slides[currentIndex]} />
+      <Slider data={fetchedMovies[currentIndex]} />
 
       <div className="slider-navigation">
         <div className="slider-indicators">
-          {slides.map((slide, index) => (
+          {fetchedMovies.map((slide, index) => (
             <div
               key={index}
               className={`indicator ${index === currentIndex ? 'active' : ''}`}

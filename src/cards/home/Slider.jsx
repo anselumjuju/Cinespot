@@ -1,24 +1,31 @@
-import React from 'react'
-import './slider.css'
-import { PlayButton } from '../../components'
+import React from 'react';
+import './slider.css';
+import { PlayButton } from '../../components';
 
 const Slider = ({ data }) => {
+    if (!data) {
+        data = {
+            backdrop_path: 'https://via.placeholder.com/174x225',
+            poster_path: 'https://via.placeholder.com/174x225',
+            title: 'Unknown Movie'
+        };
+    }
 
     const {
-        thumbnail = 'https://via.placeholder.com/174x225',
-        poster = 'https://via.placeholder.com/174x225',
-        title = 'Unknown Movie'
-    } = data
+        backdrop_path,
+        poster_path,
+        title
+    } = data;
 
     return (
         <div className='slider'>
             <div className="slider_img">
-                <img src={thumbnail} alt="movieImage" className="slider_img-blur" />
-                <img src={thumbnail} alt="movieImage" className="slider_img-img" />
+                <img src={`https://image.tmdb.org/t/p/w300/${backdrop_path}`} alt="movieImage" className="slider_img-blur" />
+                <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt="movieImage" className="slider_img-img" />
             </div>
             <div className="slider_content">
                 <div className="moviePoster">
-                    <img src={poster} alt="moviePoster" />
+                    <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="moviePoster" />
                 </div>
                 <div className="slider_content-details">
                     <PlayButton size={'80px'} />
@@ -29,8 +36,7 @@ const Slider = ({ data }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-
-export default Slider
+export default Slider;

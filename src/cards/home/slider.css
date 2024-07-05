@@ -18,7 +18,7 @@
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
-    filter: blur(500px) brightness(0.7) contrast(1.5);
+    filter: blur(500px) brightness(0.7);
 }
 
 .slider_img-img {
@@ -27,7 +27,7 @@
     position: absolute;
     inset: 0 0 0 0;
     object-fit: cover;
-    filter: brightness(0.8);
+    filter: brightness(0.3);
 }
 
 .slider_content {

@@ -1,17 +1,30 @@
-import React from 'react'
-import './movieCard2.css'
+import React from 'react';
+import './movieCard2.css';
+import { PlayButton } from '../../components';
 
-import { PlayButton } from '../../components'
+const HeroCard = ({ data }) => {
+    if (!data) {
+        data = {
+            backdrop_path: 'https://via.placeholder.com/174x225',
+            poster_path: 'https://via.placeholder.com/174x225',
+            title: 'Unknown Movie'
+        };
+    }
 
-const HeroCard = ({ thumbnail = 'https://via.placeholder.com/174x225', poster = 'https://via.placeholder.com/174x225', title = 'Unknown' }) => {
+    const {
+        backdrop_path,
+        poster_path,
+        title
+    } = data;
+
     return (
         <div className='heroCard'>
             <div className="heroCard-img">
                 <div className="overlay"></div>
-                <img src={thumbnail} alt="movieImage" />
+                <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt="movieImage" />
             </div>
             <div className="heroCard-content">
-                <img src={poster} alt='movieImage' className="heroCard-content-img" />
+                <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt='movieImage' className="heroCard-content-img" />
                 <div className="heroCard-content-details">
                     <div className="title">
                         <h2>{title}</h2>
@@ -21,9 +34,7 @@ const HeroCard = ({ thumbnail = 'https://via.placeholder.com/174x225', poster = 
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-
-
-export default HeroCard
+export default HeroCard;

@@ -20,3 +20,35 @@ export const fetchMoviesByQuery = async (query) => {
 
     return response.data.results;
 }
+
+
+export const fetchTopMovies = async (n) => {
+    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url);
+    let movies = response.data.results;
+
+    movies = movies.filter(movie => movie.backdrop_path && movie.poster_path);
+
+    for (let i = movies.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [movies[i], movies[j]] = [movies[j], movies[i]];
+    }
+    n = n || movies.length;
+
+    return movies.slice(0, n);
+}
+
+export const fetchTrendingMovies = async (n) => {
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url);
+    let movies = response.data.results;
+
+    movies = movies.filter(movie => movie.backdrop_path && movie.poster_path);
+
+    for (let i = movies.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [movies[i], movies[j]] = [movies[j], movies[i]];
+    }
+    n = n || movies.length;
+    return movies.slice(0, n);
+}

@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './trendingCards.css'
 
 import { SecondaryButton } from '../../components'
 import { MovieCard2 } from '../../cards'
-import { slides } from '../../constants/constant'
+
+import { fetchTrendingMovies } from '../../api/fetchData'
 
 const TrendingCards = () => {
 
+    const [fetchedMovies, setFetchedMovies] = useState([])
+
+
+    useEffect(() => {
+        async function fetchData() {
+            let fetchedMovies = await fetchTrendingMovies(2);
+            setFetchedMovies(fetchedMovies);
+        }
+
+        fetchData();
+    }, [])
+
     return (
+
         <div className='trendingCards'>
             <div className="trendingCards_nav">
                 <h4>Trending</h4>
@@ -15,8 +29,8 @@ const TrendingCards = () => {
             </div>
             <div className="movies-list">
                 {
-                    slides.map((movie, index) =>
-                        <MovieCard2 key={index} {...movie} />)
+                    fetchedMovies.map((movie, index) =>
+                        <MovieCard2 key={index} data={movie} />)
                 }
             </div>
         </div>
