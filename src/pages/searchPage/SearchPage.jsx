@@ -10,16 +10,21 @@ const SearchPage = () => {
 
     const params = new URLSearchParams(location.search);
     const genreName = params.get('genre');
+    const query = params.get('query');
 
     useEffect(() => {
         async function fetchData() {
             let fetchedMovies = [];
-            fetchedMovies = await fetchMoviesByGenre(genreName);
+            if (genreName) {
+                fetchedMovies = await fetchMoviesByGenre(genreName);
+            } else {
+                fetchedMovies = await fetchMoviesByQuery(query);
+            }
             setMovies(fetchedMovies);
         }
 
         fetchData();
-    }, [genreName]);
+    }, [genreName, query]);
 
     return (
         <div className='searchPage margin-tb'>

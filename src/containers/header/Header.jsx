@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './header.css'
 
 import { PrimaryButton } from '../../components';
@@ -6,20 +7,31 @@ import { RxHamburgerMenu, RxCross2, RxMagnifyingGlass } from "react-icons/rx";
 
 
 const Header = () => {
+    const searchRef = useRef();
 
     const [search, setSearch] = useState('');
     const [showMenu, setShowMenu] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
 
+    const navigate = useNavigate();
+
     const toggleSearch = () => {
         if (search)
-            handleSearch()
-        setShowSearch(!showSearch)
+            handleSearch();
+        setShowSearch(!showSearch);
+
     }
+
     const handleSearch = () => {
-        alert('Search '+ search)
+        navigate(`/search?query=${search.toLowerCase()}`)
         setSearch('');
     }
+
+    useEffect(() => {
+        if (showSearch && searchRef.current) {
+            searchRef.current.focus();
+        }
+    }, [showSearch]);
 
 
     return (
@@ -34,7 +46,7 @@ const Header = () => {
             <div className="header-buttons">
                 <div className="search-container">
                     {showSearch &&
-                        <input type="text" name="search" id="search"
+                        <input type="text" name="search" id="search" ref={searchRef}
                             placeholder="Search" value={search}
                             onChange={(e) => setSearch(e.target.value)}
                             onKeyDown={(e) => {
