@@ -3,38 +3,38 @@ import './button.css'
 
 import { PlayIcon, PreviousArrow, NextArrow } from '../../assets'
 
-const PrimaryButton = (props) => {
+const PrimaryButton = ({ text, onClick }) => {
     return (
-        <button className='primaryButton'>{props.text}</button>
+        <button className='primaryButton'>{text}</button>
     )
 }
 
-const SecondaryButton = (props) => {
+const SecondaryButton = ({ text, onClick }) => {
     return (
-        <button className='secondaryButton'>{props.text}</button>
+        <button className='secondaryButton' onClick={onClick}>{text}</button>
     )
 }
 
-const ExploreButton = (props) => {
+const ExploreButton = ({ text, onClick }) => {
     return (
-        <div className='exploreButton'>
+        <div className='exploreButton' onClick={onClick}>
             <img src={PlayIcon} alt='Play' />
-            <button >{props.text}</button>
+            <button >{text}</button>
         </div>
     )
 }
 
 
-const PlayButton = (props) => {
+const PlayButton = ({ size, onClick }) => {
     return (
         <div className='playButton' style={
             {
-                width: props.size,
-                height: props.size,
-                maxWidth: props.size,
-                maxHeight: props.size
+                width: size,
+                height: size,
+                maxWidth: size,
+                maxHeight: size
             }
-        }>
+        } onClick={onClick}>
             <img src={PlayIcon} alt='Play' />
         </div>
     )
