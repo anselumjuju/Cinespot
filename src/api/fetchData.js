@@ -52,3 +52,17 @@ export const fetchTrendingMovies = async (n) => {
     n = n || movies.length;
     return movies.slice(0, n);
 }
+
+
+export const fetchMoviesByCategory = async (category) => {
+    const apiMap = {
+        trending: 'trending/movie/week',
+        popular: 'movie/popular',
+        upcoming: 'movie/upcoming'
+    };
+
+    const url = `https://api.themoviedb.org/3/${apiMap[category]}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
+    const response = await axios.get(url);
+    let movies = response.data.results;
+    return movies
+};
