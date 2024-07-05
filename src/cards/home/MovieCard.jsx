@@ -15,7 +15,7 @@ const MovieCard = ({ data }) => {
         <div className='movieCard'>
             <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="movieImage" width='174px' />
             <div className="movieCard-details">
-                <p className="movieCard-details-title" title={title}>{title}</p>
+                <p className="movieCard-details-title twoline-ellipses" title={title}>{title}</p>
                 <div className="movieCard-details-fav">
                     <div className="movieCard-details-rating">
                         <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
