@@ -103,8 +103,7 @@
         display: block;
     }
 
-    .header-nav,
-    .header-buttons :nth-child(2) {
+    .header-nav{
         display: none;
     }
 

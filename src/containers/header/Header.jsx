@@ -38,34 +38,16 @@ const Header = () => {
         <div className='header'>
             <p className="header-logo" onClick={() => navigate('/')}>Cine<span>spot</span></p>
             <nav className='header-nav'>
-                <NavLink
-                    to={'/'}
-                    className={({ isActive }) => (isActive ? 'active' : '')}
-                    end
-                > <p>Home</p> </NavLink>
-
-                <NavLink
-                    to={'/explore'}
-                    className={({ isActive }) => (isActive ? 'active' : '')}
-                    end
-                > <p>Movies</p> </NavLink>
-
-                <NavLink
-                    to={'/search?find=popular'}
-                    className={({ isActive }) => {
-                        const searchParams = new URLSearchParams(window.location.search);
-                        return isActive && searchParams.get('find') === 'popular' ? 'active' : '';
-                    }}
-                > <p>Popular</p> </NavLink>
-
-                <NavLink
-                    to={'/search?find=upcoming'}
-                    className={({ isActive }) => {
-                        const searchParams = new URLSearchParams(window.location.search);
-                        return isActive && searchParams.get('find') === 'upcoming' ? 'active' : '';
-                    }}
-                > <p>Upcoming</p> </NavLink>
-
+                <NavLink to={'/'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Home</p> </NavLink>
+                <NavLink to={'/explore'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Movies</p> </NavLink>
+                <NavLink to={'/search?find=popular'} className={({ isActive }) => {
+                    const searchParams = new URLSearchParams(window.location.search);
+                    return isActive && searchParams.get('find') === 'popular' ? 'active' : '';
+                }}> <p>Popular</p> </NavLink>
+                <NavLink to={'/search?find=upcoming'} className={({ isActive }) => {
+                    const searchParams = new URLSearchParams(window.location.search);
+                    return isActive && searchParams.get('find') === 'upcoming' ? 'active' : '';
+                }}> <p>Upcoming</p> </NavLink>
             </nav>
             <div className="header-buttons">
                 <div className="search-container">
@@ -80,7 +62,6 @@ const Header = () => {
                     }
                     <RxMagnifyingGlass className='xxMagnifyingGlass icons' size={20} onClick={toggleSearch} />
                 </div>
-                <PrimaryButton text="Sign In" />
                 <RxHamburgerMenu size={20} className='hamburger icons' onClick={() => setShowMenu(!showMenu)} />
             </div>
             {
@@ -89,13 +70,15 @@ const Header = () => {
                     <nav className='header-menu-nav'>
                         <NavLink to={'/'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Home</p> </NavLink>
                         <NavLink to={'/explore'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Movies</p> </NavLink>
-                        <NavLink to={'/search?find=popular'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Popular</p> </NavLink>
-                        <NavLink to={'/search?find=upcoming'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Upcoming</p> </NavLink>
-
+                        <NavLink to={'/search?find=popular'} className={({ isActive }) => {
+                            const searchParams = new URLSearchParams(window.location.search);
+                            return isActive && searchParams.get('find') === 'popular' ? 'active' : '';
+                        }}> <p>Popular</p> </NavLink>
+                        <NavLink to={'/search?find=upcoming'} className={({ isActive }) => {
+                            const searchParams = new URLSearchParams(window.location.search);
+                            return isActive && searchParams.get('find') === 'upcoming' ? 'active' : '';
+                        }}> <p>Upcoming</p> </NavLink>
                     </nav>
-                    <div className="header-menu-buttons">
-                        <PrimaryButton text="Sign In" />
-                    </div>
                     <RxCross2 size={26} className='close icons' onClick={() => setShowMenu(!showMenu)} />
                 </div>
             }

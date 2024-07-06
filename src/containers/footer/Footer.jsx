@@ -1,12 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './footer.css'
 
 import { PrimaryButton, FooterLink } from '../../components'
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
-    <div className='footer margin-t'>
-      <PrimaryButton text='Experience Cinespot fully - Sign Up' />
+    <div className='footer'>
+      <PrimaryButton text='Experience Cinespot fully' onClick={() => navigate('/explore')} />
       <div className="footer_content">
         <div className="footer_content-links">
           <div className="link1">

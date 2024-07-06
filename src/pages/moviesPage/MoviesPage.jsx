@@ -65,10 +65,6 @@ const MoviesPage = () => {
         <div className="summary-details">
           <div className="summary-header">
             <h3 className='oneline-ellipses'>{data.title}</h3>
-            <div className="summary-buttons">
-              <PrimaryButton text='Watchlist' />
-              <SecondaryButton text='Watched' />
-            </div>
           </div>
           <div className="summary-content">
             <div className="content_div">
@@ -110,28 +106,6 @@ const MoviesPage = () => {
       <div className="castSection">
         <CastSlider movieCredits={movieCredits} />
       </div>
-
-      {/* <div className="detailsSection">
-        <h3>Details</h3>
-        <div className="detailsSection-context">
-          <div className="content_div">
-            <p className="content_div-title">Summary</p>
-            <p className="content_div-details">{data.overview}</p>
-          </div>
-          <div className="content_div">
-            <p className="content_div-title">Tagline</p>
-            <p className="content_div-details">{data.tagline}</p>
-          </div>
-          <div className="content_div">
-            <p className="content_div-title">Country</p>
-            <p className="content_div-details">{data.country}</p>
-          </div>
-          <div className="content_div">
-            <p className="content_div-title">Companies</p>
-            <p className="content_div-details">{data.companies}</p>
-          </div>
-        </div> 
-      </div>*/}
 
       <div className="similarSection">
         <MovieLists1 movies={similarMovies} title='Similar Movies' />

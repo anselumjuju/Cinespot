@@ -69,6 +69,7 @@ button {
 }
 
 .navigatingButton {
+    min-width: 25px;
     width: 35px;
     aspect-ratio: 1;
     background: rgba(165, 165, 165, 0.16);
