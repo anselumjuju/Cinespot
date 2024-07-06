@@ -41,18 +41,19 @@
 .header-nav p::after {
     content: '';
     width: 0%;
-    height: 2px;
+    height: 2.5px;
     position: absolute;
     left: 0px;
     bottom: -4px;
+    border-radius: 1px;
     background: var(--primary-red);
     transition: all 0.2s ease;
 }
 
-.header-nav p:hover::after,
-.header-nav p:active::after {
-    width: 60%;
+.header-nav a.active p::after {
+    width: 70%;
 }
+
 
 .header-buttons {
     width: max-content;

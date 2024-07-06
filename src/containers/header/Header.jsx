@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './header.css'
 
 import { PrimaryButton } from '../../components';
@@ -36,12 +36,36 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <p className="header-logo">Cine<span>spot</span></p>
+            <p className="header-logo" onClick={() => navigate('/')}>Cine<span>spot</span></p>
             <nav className='header-nav'>
-                <p>Movies</p>
-                <p>Latest</p>
-                <p>TV Shows</p>
-                <p>Watchlist</p>
+                <NavLink
+                    to={'/'}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                    end
+                > <p>Home</p> </NavLink>
+
+                <NavLink
+                    to={'/explore'}
+                    className={({ isActive }) => (isActive ? 'active' : '')}
+                    end
+                > <p>Movies</p> </NavLink>
+
+                <NavLink
+                    to={'/search?find=popular'}
+                    className={({ isActive }) => {
+                        const searchParams = new URLSearchParams(window.location.search);
+                        return isActive && searchParams.get('find') === 'popular' ? 'active' : '';
+                    }}
+                > <p>Popular</p> </NavLink>
+
+                <NavLink
+                    to={'/search?find=upcoming'}
+                    className={({ isActive }) => {
+                        const searchParams = new URLSearchParams(window.location.search);
+                        return isActive && searchParams.get('find') === 'upcoming' ? 'active' : '';
+                    }}
+                > <p>Upcoming</p> </NavLink>
+
             </nav>
             <div className="header-buttons">
                 <div className="search-container">
@@ -63,10 +87,11 @@ const Header = () => {
                 showMenu &&
                 <div className="header-menu">
                     <nav className='header-menu-nav'>
-                        <p>Movies</p>
-                        <p>Latest</p>
-                        <p>TV Shows</p>
-                        <p>Watchlist</p>
+                        <NavLink to={'/'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Home</p> </NavLink>
+                        <NavLink to={'/explore'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Movies</p> </NavLink>
+                        <NavLink to={'/search?find=popular'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Popular</p> </NavLink>
+                        <NavLink to={'/search?find=upcoming'} className={({ isActive }) => (isActive ? 'active' : '')} end> <p>Upcoming</p> </NavLink>
+
                     </nav>
                     <div className="header-menu-buttons">
                         <PrimaryButton text="Sign In" />

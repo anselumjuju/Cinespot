@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {  useNavigate } from 'react-router-dom';
 import './home.css';
 
 import { HeroSlider, TrendingCards, MovieLists2 } from '../../containers';
@@ -6,6 +7,7 @@ import { SecondaryButton } from '../../components';
 import { fetchMoviesByCategory } from '../../api/fetchData'; // Adjust the import based on your project structure
 
 const Home = () => {
+  const navigate = useNavigate();
   const [movies, setMovies] = useState({
     Trending: [],
     Popular: [],
@@ -45,7 +47,7 @@ const Home = () => {
         {['Trending', 'Popular', 'Upcoming'].map((category, index) => (
           <div className='home_section2-div' key={index}>
             <MovieLists2 title={category} movies={movies[category]} />
-            <SecondaryButton text='Explore' />
+            <SecondaryButton text='Explore' onClick={() => navigate(`/search?find=${category.toLowerCase()}`)}/>
           </div>
         ))}
       </div>

@@ -23,7 +23,7 @@ const Slider = ({ data }) => {
         <div className='slider'>
             <div className="slider_img">
                 <img src={`https://image.tmdb.org/t/p/w300/${backdrop_path}`} alt="movieImage" className="slider_img-blur" />
-                <img src={`https://image.tmdb.org/t/p/original/${backdrop_path}`} alt="movieImage" className="slider_img-img" />
+                <img src={`https://image.tmdb.org/t/p/w780/${backdrop_path}`} alt="movieImage" className="slider_img-img" />
             </div>
             <div className="slider_content">
                 <div className="moviePoster">

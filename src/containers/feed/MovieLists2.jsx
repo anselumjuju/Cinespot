@@ -25,7 +25,7 @@ const MovieLists2 = ({ title, text, movies }) => {
                     </div>
                 </>
             ) : (
-                <p>No movies found</p>
+                <p>Loading</p>
             )}
         </div>
     )
