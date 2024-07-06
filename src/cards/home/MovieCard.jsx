@@ -15,7 +15,7 @@ const MovieCard = ({ data }) => {
 
     return (
         <div className='movieCard'>
-            <img src={`https://image.tmdb.org/t/p/w780/${poster_path}`} alt="movieImage" width='174px' />
+            <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="movieImage" width='174px' />
             <div className="movieCard-details">
                 <p className="movieCard-details-title twoline-ellipses" title={title}>{title}</p>
                 <div className="movieCard-details-fav">

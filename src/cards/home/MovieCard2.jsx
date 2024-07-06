@@ -23,10 +23,10 @@ const HeroCard = ({ data }) => {
         <div className='heroCard'>
             <div className="heroCard-img">
                 <div className="overlay"></div>
-                <img src={`https://image.tmdb.org/t/p/w1280/${backdrop_path}`} alt="movieImage" />
+                <img src={`https://image.tmdb.org/t/p/w780/${backdrop_path}`} alt="movieImage" />
             </div>
             <div className="heroCard-content">
-                <img src={`https://image.tmdb.org/t/p/w780/${poster_path}`} alt='movieImage' className="heroCard-content-img" />
+                <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt='movieImage' className="heroCard-content-img" />
                 <div className="heroCard-content-details">
                     <div className="title">
                         <h2>{title}</h2>

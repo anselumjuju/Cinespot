@@ -32,11 +32,11 @@ const MoviesPage = () => {
 
   const data = {
     title: movieDetails.title || '',
-    backdrop: 'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path || 'https://via.placeholder.com/174x225',
+    backdrop: 'https://image.tmdb.org/t/p/w1280/' + movieDetails.backdrop_path || 'https://via.placeholder.com/174x225',
     director: movieCredits.crew?.find(person => person.job === 'Director')?.name || '',
     genres: movieDetails.genres?.map(genre => genre.name).join(', ') || '',
     languages: movieDetails.spoken_languages?.map(lang => lang.english_name).join(', ') || '',
-    posterPath: 'https://image.tmdb.org/t/p/w780/' + movieDetails.poster_path || 'https://via.placeholder.com/174x225',
+    posterPath: 'https://image.tmdb.org/t/p/w500/' + movieDetails.poster_path || 'https://via.placeholder.com/174x225',
     runtime: movieDetails.runtime || '',
     releaseDate: movieDetails.release_date || '',
     rating: movieDetails.vote_average || '',

@@ -5,8 +5,6 @@ import { Header, Footer } from './containers'
 import { Routes, Route } from 'react-router-dom'
 import { Home, MoviesPage, Explore, SearchPage } from './pages'
 
-import { movies } from './constants/constant'
-
 const App = () => {
 
     return (
@@ -15,7 +13,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/explore' element={<Explore />} />
-                <Route path='/movie/:id' element={<MoviesPage data={movies} />} />
+                <Route path='/movie/:id' element={<MoviesPage />} />
                 <Route path='/search' element={<SearchPage />} />
             </Routes>
             <Footer />

@@ -27,7 +27,7 @@ const Slider = ({ data }) => {
             </div>
             <div className="slider_content">
                 <div className="moviePoster">
-                    <img src={`https://image.tmdb.org/t/p/w780/${poster_path}`} alt="moviePoster" />
+                    <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} alt="moviePoster" />
                 </div>
                 <div className="slider_content-details">
                     <PlayButton size={'80px'} onClick={() => navigate('/movie/' + data.id)}/>
