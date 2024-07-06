@@ -6,7 +6,7 @@ import { CastImage } from '..'
 const CastCard = ({ data }) => {
 
   const {
-    profilePath = data.profile_path ? `https://image.tmdb.org/t/p/w500/${data.profile_path}` : 'https://via.placeholder.com/174x225',
+    profilePath = data.profile_path ? `https://image.tmdb.org/t/p/h632/${data.profile_path}` : 'https://via.placeholder.com/174x225',
     movieName = data.character,
     originalName = data.name
   } = data

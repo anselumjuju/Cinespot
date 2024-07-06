@@ -32,11 +32,11 @@ const MoviesPage = () => {
 
   const data = {
     title: movieDetails.title || '',
-    backdrop: movieDetails.backdrop_path || '',
+    backdrop: 'https://image.tmdb.org/t/p/original/' + movieDetails.backdrop_path || 'https://via.placeholder.com/174x225',
     director: movieCredits.crew?.find(person => person.job === 'Director')?.name || '',
     genres: movieDetails.genres?.map(genre => genre.name).join(', ') || '',
     languages: movieDetails.spoken_languages?.map(lang => lang.english_name).join(', ') || '',
-    posterPath: movieDetails.poster_path || '',
+    posterPath: 'https://image.tmdb.org/t/p/w780/' + movieDetails.poster_path || 'https://via.placeholder.com/174x225',
     runtime: movieDetails.runtime || '',
     releaseDate: movieDetails.release_date || '',
     rating: movieDetails.vote_average || '',
@@ -71,24 +71,38 @@ const MoviesPage = () => {
             </div>
           </div>
           <div className="summary-content">
-            <div className="content-title">
-              <p>Director</p>
-              <p>Genre</p>
-              <p>Language</p>
-              <p>Runtime</p>
-              <p>Release Date</p>
-              <p>Rating</p>
-              <p>Tagline</p>
+            <div className="content_div">
+              <p className="content_div-title">Summary</p>
+              <p className="content_div-details">{data.overview}</p>
             </div>
-            <div className="content-details">
-              <p>{data.director}</p>
-              <p>{data.genres}</p>
-              <p>{data.languages}</p>
-              <p>{data.runtime}</p>
-              <p>{data.releaseDate}</p>
-              <p>{data.rating}</p>
-              <p>{data.tagline}</p>
+            <div className="content_div">
+              <p className="content_div-title">Director</p>
+              <p className="content_div-details">{data.director}</p>
             </div>
+            <div className="content_div">
+              <p className="content_div-title">Genre</p>
+              <p className="content_div-details">{data.genres}</p>
+            </div>
+            <div className="content_div">
+              <p className="content_div-title">Language</p>
+              <p className="content_div-details">{data.languages}</p>
+            </div>
+            <div className="content_div">
+              <p className="content_div-title">Release Date</p>
+              <p className="content_div-details">{data.releaseDate}</p>
+            </div>
+            <div className="content_div">
+              <p className="content_div-title">Rating</p>
+              <p className="content_div-details">{data.rating}</p>
+            </div>
+          <div className="content_div">
+            <p className="content_div-title">Country</p>
+            <p className="content_div-details">{data.country}</p>
+          </div>
+          <div className="content_div">
+            <p className="content_div-title">Companies</p>
+            <p className="content_div-details">{data.companies}</p>
+          </div>
           </div>
         </div>
       </div>
@@ -97,33 +111,27 @@ const MoviesPage = () => {
         <CastSlider movieCredits={movieCredits} />
       </div>
 
-      <div className="detailsSection">
+      {/* <div className="detailsSection">
         <h3>Details</h3>
         <div className="detailsSection-context">
-          <div className="detailsSection-title">
-            <p>Summary</p>
-            <p>Genre</p>
-            <p>Language</p>
-            <p>Release Date</p>
-            <p>Country</p>
-            <p>Revenue</p>
-            <p>Runtime</p>
-            <p>Rating</p>
-            <p>Companies</p>
+          <div className="content_div">
+            <p className="content_div-title">Summary</p>
+            <p className="content_div-details">{data.overview}</p>
           </div>
-          <div className="detailsSection-content">
-            <p>{data.overview}</p>
-            <p>{data.genres}</p>
-            <p>{data.languages}</p>
-            <p>{data.releaseDate}</p>
-            <p>{data.country}</p>
-            <p>{data.revenue}</p>
-            <p>{data.runtime}</p>
-            <p>{data.rating}</p>
-            <p>{data.companies}</p>
+          <div className="content_div">
+            <p className="content_div-title">Tagline</p>
+            <p className="content_div-details">{data.tagline}</p>
           </div>
-        </div>
-      </div>
+          <div className="content_div">
+            <p className="content_div-title">Country</p>
+            <p className="content_div-details">{data.country}</p>
+          </div>
+          <div className="content_div">
+            <p className="content_div-title">Companies</p>
+            <p className="content_div-details">{data.companies}</p>
+          </div>
+        </div> 
+      </div>*/}
 
       <div className="similarSection">
         <MovieLists1 movies={similarMovies} title='Similar Movies' />

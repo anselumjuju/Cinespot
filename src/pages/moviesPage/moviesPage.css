@@ -18,7 +18,7 @@
 }
 
 h3 {
-    font-size: var(--font-2);
+    font-size: var(--font-4);
     font-weight: 700;
 }
 
@@ -56,7 +56,7 @@ h3 {
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    gap: 32px;
+    gap: 48px;
 }
 
 .summary-details .summary-header {
@@ -77,23 +77,35 @@ h3 {
 
 .summary-details .summary-content {
     width: 100%;
+    padding-bottom: 10px;
     flex: 1;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    gap: 16px;
-}
-
-.content-title,
-.content-details {
-    width: max-content;
-    padding-right: 40px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
     gap: 32px;
+}
+
+.content_div{
+    width: 100%;
+    height: max-content;
+    display: flex;;
+    align-items: baseline;
+    justify-content: start;
+    gap: 16px;
+}
+
+.content_div-title{
+    min-width: 180px;
+    color: white;
+    font-size: var(--font-1);
+    font-weight: 500;
+}
+
+.content_div-details{
+    color: var(--white-200);
+    font-size: var(--font--1);
+    font-weight: 400;
 }
 
 /* Cast Section */

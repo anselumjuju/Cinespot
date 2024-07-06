@@ -29,7 +29,7 @@ const CastSlider = ({ movieCredits }) => {
     useEffect(() => {
         if (movieCredits && movieCredits.cast) {
             const filteredCredits = movieCredits.cast
-                .filter(cast => cast.known_for_department === 'Acting' && cast.popularity > 20)
+                .filter(cast => cast.known_for_department === 'Acting' && cast.popularity > 5)
                 .sort((a, b) => b.order + a.order);
             setCredits(filteredCredits);
         }
