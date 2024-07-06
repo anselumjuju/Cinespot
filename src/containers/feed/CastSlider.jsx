@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './castSlider.css'
 
 import { CastCard } from '../../components'
 import { NavigatingButton } from '../../components'
-import { movies } from '../../constants/constant'
 
-const CastSlider = () => {
+const CastSlider = ({ movieCredits }) => {
+    const [credits, setCredits] = useState([])
     const listRef = useRef(null)
 
     const handlePreviousClick = () => {
@@ -16,6 +16,7 @@ const CastSlider = () => {
             });
         }
     }
+
     const handleNextClick = () => {
         if (listRef.current) {
             listRef.current.scrollTo({
@@ -25,6 +26,16 @@ const CastSlider = () => {
         }
     }
 
+    useEffect(() => {
+        if (movieCredits && movieCredits.cast) {
+            const filteredCredits = movieCredits.cast
+                .filter(cast => cast.known_for_department === 'Acting' && cast.popularity > 20)
+                .sort((a, b) => b.order + a.order);
+            setCredits(filteredCredits);
+        }
+    }, [movieCredits])
+
+
     return (
         <div className='castSlider'>
             <div className="castSlider-nav">
@@ -32,7 +43,11 @@ const CastSlider = () => {
                 <NavigatingButton onPrevious={handlePreviousClick} onNext={handleNextClick} />
             </div>
             <div className="castSlider-list" ref={listRef}>
-                {movies.map((movie, index) => <CastCard key={index} data={movie} />)}
+                {
+                    credits.map(
+                        (cast, index) => <CastCard key={index} data={cast} />
+                    )
+                }
             </div>
         </div>
     )

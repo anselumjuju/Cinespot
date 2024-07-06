@@ -66,3 +66,33 @@ export const fetchMoviesByCategory = async (category) => {
     let movies = response.data.results;
     return movies
 };
+
+
+export const fetchMovieDetails = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url)
+    return response.data
+}
+
+export const fetchMovieCredits = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url)
+    return response.data
+}
+
+export const fetchSimilarMovies = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url)
+    return response.data.results
+}
+
+export const fetchYouTubeTrailers = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${process.env.REACT_APP_API_KEY}`;
+    const response = await axios.get(url);
+    const results = response.data.results;
+
+    const filteredKeys = results
+        .filter(video => video.site === "YouTube" && video.type === "Trailer" && video.official === true)
+        .map(video => video.key);
+    return filteredKeys[0];
+}

@@ -1,53 +1,70 @@
-import React, { useEffect } from 'react'
-import './moviesPage.css'
+import React, { useState, useEffect } from 'react';
+import './moviesPage.css';
 
 import { PrimaryButton, SecondaryButton } from '../../components';
-import { CastSlider, PhotoSlider, MovieLists1 } from '../../containers/';
+import { CastSlider, MovieLists1 } from '../../containers/';
 import { VideoPlayer } from '../../cards';
 import { useParams } from 'react-router-dom';
+import { fetchMovieDetails, fetchMovieCredits, fetchSimilarMovies, fetchYouTubeTrailers } from '../../api/fetchData';
 
-const MoviesPage = ({ data }) => {
+const MoviesPage = () => {
+  const [movieDetails, setMovieDetails] = useState({});
+  const [movieCredits, setMovieCredits] = useState({});
+  const [similarMovies, setSimilarMovies] = useState([]);
+  const [videoId, setVideoId] = useState('');
+  const { id } = useParams();
 
-  const Params = useParams();
+  useEffect(() => {
+    async function fetchData() {
+      const fetchedMovieDetails = await fetchMovieDetails(id);
+      const fetchedMovieCredits = await fetchMovieCredits(id);
+      const fetchedSimilarMovies = await fetchSimilarMovies(id);
+      const fetchedVideoId = await fetchYouTubeTrailers(id);
 
-  const {
-    name = 'Movie Name',
-    trailer = 'https://via.placeholder.com/174x225',
-    image = 'https://via.placeholder.com/174x225',
-    summary = 'Summary',
-    genre = 'Genre',
-    language = 'Language',
-    runtime = 'Runtime',
-    releaseDate = 'Release Date',
-    rating = 'Rating',
-    country = 'Country',
-    revenue = 'Revenue',
-    companies = 'Companies',
-  } = data;
+      setMovieDetails(fetchedMovieDetails);
+      setMovieCredits(fetchedMovieCredits);
+      setSimilarMovies(fetchedSimilarMovies);
+      setVideoId(fetchedVideoId);
+    }
 
-  useEffect(()=>{
-    console.log(Params.id);
-  });
+    fetchData();
+  }, [id]);
+
+  const data = {
+    title: movieDetails.title || '',
+    backdrop: movieDetails.backdrop_path || '',
+    director: movieCredits.crew?.find(person => person.job === 'Director')?.name || '',
+    genres: movieDetails.genres?.map(genre => genre.name).join(', ') || '',
+    languages: movieDetails.spoken_languages?.map(lang => lang.english_name).join(', ') || '',
+    posterPath: movieDetails.poster_path || '',
+    runtime: movieDetails.runtime || '',
+    releaseDate: movieDetails.release_date || '',
+    rating: movieDetails.vote_average || '',
+    tagline: movieDetails.tagline || '',
+    overview: movieDetails.overview || '',
+    country: movieDetails.production_countries?.map(country => country.name).join(', ') || '',
+    revenue: movieDetails.revenue || '',
+    companies: movieDetails.production_companies?.map(company => company.name).join(', ') || ''
+  };
 
   return (
     <div className='moviesPage margin-tb'>
-
       <div className="titleSection">
-        <h3 className='twoline-ellipses'>{name}</h3>
+        <h3 className='twoline-ellipses'>{data.title}</h3>
         <SecondaryButton text='Share' />
       </div>
 
       <div className="trailerSection">
-        <VideoPlayer image={trailer} />
+        <VideoPlayer image={data.backdrop} id={videoId} />
       </div>
 
       <div className="summarySection">
         <div className="summary-poster">
-          <img src={image} alt="MovieImage" />
+          <img src={data.posterPath} alt="Movie Poster" />
         </div>
         <div className="summary-details">
           <div className="summary-header">
-            <h3 className='oneline-ellipses'>{name}</h3>
+            <h3 className='oneline-ellipses'>{data.title}</h3>
             <div className="summary-buttons">
               <PrimaryButton text='Watchlist' />
               <SecondaryButton text='Watched' />
@@ -64,24 +81,20 @@ const MoviesPage = ({ data }) => {
               <p>Tagline</p>
             </div>
             <div className="content-details">
-              <p>director</p>
-              <p>genre</p>
-              <p>language</p>
-              <p>runtime</p>
-              <p>release date</p>
-              <p>rating</p>
-              <p>tagline</p>
+              <p>{data.director}</p>
+              <p>{data.genres}</p>
+              <p>{data.languages}</p>
+              <p>{data.runtime}</p>
+              <p>{data.releaseDate}</p>
+              <p>{data.rating}</p>
+              <p>{data.tagline}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="castSection">
-        <CastSlider />
-      </div>
-
-      <div className="photoSection">
-        <PhotoSlider />
+        <CastSlider movieCredits={movieCredits} />
       </div>
 
       <div className="detailsSection">
@@ -99,25 +112,24 @@ const MoviesPage = ({ data }) => {
             <p>Companies</p>
           </div>
           <div className="detailsSection-content">
-            <p>{summary}</p>
-            <p>{genre}</p>
-            <p>{language}</p>
-            <p>{releaseDate}</p>
-            <p>{country}</p>
-            <p>{revenue}</p>
-            <p>{runtime}</p>
-            <p>{rating}</p>
-            <p>{companies}</p>
+            <p>{data.overview}</p>
+            <p>{data.genres}</p>
+            <p>{data.languages}</p>
+            <p>{data.releaseDate}</p>
+            <p>{data.country}</p>
+            <p>{data.revenue}</p>
+            <p>{data.runtime}</p>
+            <p>{data.rating}</p>
+            <p>{data.companies}</p>
           </div>
         </div>
       </div>
 
       <div className="similarSection">
-        <MovieLists1 data={"Similar"} />
+        <MovieLists1 movies={similarMovies} title='Similar Movies' />
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default MoviesPage
+export default MoviesPage;

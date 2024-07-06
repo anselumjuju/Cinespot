@@ -3,10 +3,8 @@ import './movieLists1.css'
 
 import { MovieCard } from '../../cards'
 import { NavigatingButton } from '../../components'
-import { movies } from '../../constants/constant'
 
-const MovieLists1 = ({data}) => {
-    const {title = 'Popular'} = data
+const MovieLists1 = ({ title, movies }) => {
     const listRef = useRef(null)
 
     const handlePreviousClick = () => {
