@@ -1,6 +1,11 @@
-# Cinespot
+# Cinespot  
 
-Cinespot is a project that displays data about movies, including details like titles, genres, release dates, ratings, and more. This project aims to provide a user-friendly interface for movie enthusiasts to browse and discover information about their favorite films.
+Cinespot is a project designed to display comprehensive movie information, including titles, genres, release dates, ratings, and more. It offers a user-friendly interface for movie enthusiasts to browse and discover details about their favorite films.  
+
+**Note:** The project leverages the TMDB API for fetching movie data. However, the API might be restricted in certain countries, including India, which may require users to utilize a VPN or alternative methods to access the service.  
+
+## Screenshot
+![Screenshot](https://github.com/user-attachments/assets/1956d113-5324-41b5-a1fb-72f6dcb1d9fe)
 
 
 ## Installation
@@ -9,7 +14,7 @@ To get started with Cinespot, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/juju-anselum/Cinespot.git
+    git clone https://github.com/anselumjuju/Cinespot.git
     ```
 
 2. Navigate to the project directory:
@@ -41,24 +46,6 @@ You should see the Cinespot interface displaying movie data.
 - **Search Functionality:** Search for movies by title.
 - **Responsive Design:** Enjoy a seamless experience on both desktop and mobile devices.
 
-## Contributing
-
-We welcome contributions to improve Cinespot! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature-branch-name
-    ```
-3. Make your changes and commit them:
-    ```bash
-    git commit -m "Description of changes"
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature-branch-name
-    ```
-5. Open a pull request on GitHub.
 
 ## License
 
